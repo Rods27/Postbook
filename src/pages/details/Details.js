@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header, PostsContainer } from '../../components/';
-import postsIntegration from '../../utils/postsIntegration';
 import { Container } from './styles';
+import { Header, PostDetails } from '../../components/';
 
-class Posts extends React.Component {
+class Details extends React.Component {
   render() {
     const { history } = this.props;
     return (
       <Container>
         <Header history={ history } />
-        <PostsContainer history={ history } posts={ postsIntegration() } />
+        <PostDetails />
       </Container>
     );
   }
 }
 
-Posts.propTypes = {
+Details.propTypes = {
   history: PropTypes.shape().isRequired,
 };
 
-export default Posts;
+export default Details;

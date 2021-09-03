@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Container, Post } from './styles';
+import { detailsAction } from '../../redux/actions';
 
 class PostsContainer extends React.Component {
   constructor() {
@@ -20,9 +21,8 @@ class PostsContainer extends React.Component {
   }
 
   render() {
-    const { history, posts } = this.props;
+    const { history, posts, dispatchPosts } = this.props;
     const { paging } = this.state;
-    console.log(posts[paging])
     return (
       <Container>
         { posts && posts[paging].map((elem, index) => (
@@ -31,7 +31,10 @@ class PostsContainer extends React.Component {
               <h5>{elem.name}</h5>
             </div>
             <div className="post-body">
-              <button onClick={ () => history.push(`/posts/${elem.id}`)}>
+              <button onClick={ () => {
+                dispatchPosts([elem]);
+                history.push(`/posts/${elem.id}`);
+              }}>
                 <h4>{elem.title}</h4>
                 <p>{elem.body}</p>
               </button>
@@ -53,8 +56,13 @@ class PostsContainer extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  dispatchPosts: (array) => dispatch(detailsAction(array)),
+});
+
 PostsContainer.propTypes = {
   history: PropTypes.shape().isRequired,
+  dispatchPosts: PropTypes.func.isRequired,
 };
 
-export default connect(null, null)(PostsContainer);
+export default connect(null, mapDispatchToProps)(PostsContainer);

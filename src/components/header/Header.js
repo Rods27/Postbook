@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import { HeaderContainer } from './style'
 
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     const { history } = this.props;
     return (
