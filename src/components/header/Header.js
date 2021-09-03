@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { HeaderContainer } from './style'
 
@@ -24,4 +23,4 @@ Header.propTypes = {
   history: PropTypes.shape().isRequired,
 };
 
-export default connect(null, null)(Header);
+export default Header;

@@ -46,14 +46,17 @@ export const Post = styled.div`
       right: 0px;
       transition: .1s;
       color: ${collorPallete.darkestWhite};
-      &:hover {
-        color: ${collorPallete.favorites};
-      }
       i {
         font-size: 30px;
         text-shadow: 0 0 2px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .2);
         -moz-text-shadow: 0 0 2px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .2);
         -webkit-text-shadow: 0 0 2px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .2);
+      }
+      .on {
+        color: ${collorPallete.favorites};
+      }
+      .off {
+        color: ${collorPallete.darkestWhite};
       }
     }
   }

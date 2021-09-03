@@ -23,6 +23,7 @@ class PostsContainer extends React.Component {
   render() {
     const { history, posts, dispatchPosts } = this.props;
     const { paging } = this.state;
+    const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
     return (
       <Container>
         { posts && posts[paging].map((elem, index) => (
@@ -40,7 +41,11 @@ class PostsContainer extends React.Component {
               </button>
               <div>
                 <button id="favorite">
-                  <i className="fas fa-star"></i>
+                  { localStorageFavorites.includes(elem.id) ?
+                    <i className="fas fa-star on"></i>
+                    :
+                    <i className="fas fa-star off"></i>
+                  }
                 </button>
                 <p id="comments">Comentários: {elem.comments.length}</p>
               </div>
