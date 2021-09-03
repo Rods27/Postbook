@@ -27,10 +27,19 @@ class PostsContainer extends React.Component {
       <Container>
         { posts && posts[paging].map((elem, index) => (
           <Post key={index}>
-            <h5>{elem.name}</h5>
-            <h4>{elem.title}</h4>
-            <p>{elem.body}</p>
-            <p>Comentarios: {elem.comments.length}</p>
+            <div className="name-div">
+              <h5>{elem.name}</h5>
+            </div>
+            <div className="post-body">
+              <h4>{elem.title}</h4>
+              <p>{elem.body}</p>
+              <div>
+                <button id="favorite">
+                  <i className="fas fa-star"></i>
+                </button>
+                <p id="comments">Comentários: {elem.comments.length}</p>
+              </div>
+            </div>
           </Post>
         )
         )}

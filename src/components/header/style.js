@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header`
   height: 55px;
   background-color: ${collorPallete.orange};
   color: ${collorPallete.darkWhite};
+  z-index: 999;
   button {
     appearance: none;
     border: none;
