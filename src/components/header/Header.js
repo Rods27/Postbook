@@ -11,12 +11,11 @@ class Header extends React.Component {
 
   render() {
     const { history } = this.props;
-    console.log(history);
     return (
       <HeaderContainer>
         <h1>Postbook</h1>
         <button>
-          <i class="fas fa-star"></i>
+          <i className="fas fa-star"></i>
         </button>
       </HeaderContainer>
     );

@@ -2,20 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Header, PostsContainer } from '../../components/';
+import postsIntegration from '../../utils/postsIntegration'
+import { Container } from './styles'
 
 class Posts extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     const { history } = this.props;
+
     return (
-      <div>
+      <Container>
         <Header history={ history } />
-        <PostsContainer history={ history } />
-      </div>
+        <PostsContainer history={ history } posts={ postsIntegration() } />
+      </Container>
     );
   }
 }

@@ -4,7 +4,7 @@ const collorPallete = {
   lightestBlack: '#5d5c5c',
   darkWhite: '#ece8e8',
   darkerWhite: '#e2e2e2',
-  darkestWhite: '#BBB5B5',
+  darkestWhite: '#c6c6c6',
   trybeGreen: '#0fa36b',
   blue: 'royalblue',
   orange: '#ff6e40',
