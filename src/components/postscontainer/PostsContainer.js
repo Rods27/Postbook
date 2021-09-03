@@ -22,7 +22,7 @@ class PostsContainer extends React.Component {
   render() {
     const { history, posts } = this.props;
     const { paging } = this.state;
-    console.log(posts)
+    console.log(posts[paging])
     return (
       <Container>
         { posts && posts[paging].map((elem, index) => (
@@ -31,8 +31,10 @@ class PostsContainer extends React.Component {
               <h5>{elem.name}</h5>
             </div>
             <div className="post-body">
-              <h4>{elem.title}</h4>
-              <p>{elem.body}</p>
+              <button onClick={ () => history.push(`/posts/${elem.id}`)}>
+                <h4>{elem.title}</h4>
+                <p>{elem.body}</p>
+              </button>
               <div>
                 <button id="favorite">
                   <i className="fas fa-star"></i>

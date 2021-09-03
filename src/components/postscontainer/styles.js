@@ -34,17 +34,20 @@ export const Post = styled.div`
       font-weight: 300;
     }
     button {
-      position: absolute;
-      top: 5px;
-      right: 0px;
       appearance: none;
       border: none;
       background: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    #favorite {
+      position: absolute;
+      top: 5px;
+      right: 0px;
       transition: .1s;
       color: ${collorPallete.darkestWhite};
       &:hover {
         color: ${collorPallete.favorites};
-
       }
       i {
         font-size: 30px;
