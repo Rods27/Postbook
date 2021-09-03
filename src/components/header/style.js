@@ -13,10 +13,21 @@ export const HeaderContainer = styled.header`
   background-color: ${collorPallete.orange};
   color: ${collorPallete.darkWhite};
   z-index: 999;
-  button {
-    appearance: none;
-    border: none;
-    background: none;
+  #home {
+    transition: .1s;
+    color: ${collorPallete.darkWhite};
+    margin-right: 5px;
+    border-radius: 8px;
+    padding: 3px;
+    &:hover {
+      color: ${collorPallete.orange};
+      background-color: ${collorPallete.darkWhite}
+      }
+    i {
+      font-size: 26px;
+    }
+  }
+  #favorites {
     transition: .1s;
     color: ${collorPallete.darkWhite};
     &:hover {
@@ -25,5 +36,10 @@ export const HeaderContainer = styled.header`
     i {
       font-size: 26px;
     }
+  }
+  button {
+    appearance: none;
+    border: none;
+    background: none;
   }
 `;

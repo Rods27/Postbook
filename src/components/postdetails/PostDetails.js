@@ -23,9 +23,9 @@ class PostDetails extends React.Component {
               <div className="comments">
                 Comentários:
                 { elem.comments.map((elem2, i) => (
-                  <div key={ i }>
+                  <div key={ i } id="comment">
                     <p>{elem2.email}</p>
-                    <p>{elem2.name}</p>
+                    <h5>{elem2.name}</h5>
                     <p>{elem2.body}</p>
                   </div>
                 ))}
@@ -43,7 +43,6 @@ const mapStateToProps = (state) => ({
 });
 
 PostDetails.propTypes = {
-  history: PropTypes.shape().isRequired,
   statePost: PropTypes.arrayOf(PropTypes.object),
 };
 

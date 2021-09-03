@@ -48,6 +48,12 @@ export const Post = styled.div`
   }
   .comments {
     align-self: center;
-    width: 90%;
+    width: 95%;
+    #comment {
+      background-color: ${collorPallete.darkestWhite};
+      padding: 3px 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
   }
 `;
