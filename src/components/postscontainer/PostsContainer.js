@@ -13,21 +13,42 @@ class PostsContainer extends React.Component {
     };
   }
 
-  paging(paging) {
-    if (paging !== 9) {
-      this.setState({ paging: paging + 1 })
-    } else {
-      this.setState({ paging: 0 })
-    }
+  componentDidMount() {
+    this.statePosts();
+    this.infiniteScroll();
+  }
+
+  statePosts() {
+    const { posts } = this.props;
+    const statePosts = posts[0];
+    this.setState({ statePosts });
+  }
+
+  infiniteScroll() {
+    const { posts } = this.props;
+    document.addEventListener('scroll', () => {
+      const scrollingHeight = document.querySelector('.post-container')
+        .getBoundingClientRect().bottom;
+      const { paging, statePosts } = this.state;
+        if (scrollingHeight + 15 <= window.innerHeight) {
+          if (paging < 10) {
+            this.setState(prevState => ({
+              paging: prevState.paging + 1 
+            }));
+            statePosts.push(...posts[paging]);
+          }
+        }
+    })
   }
 
   render() {
-    const { history, posts, dispatchPosts, dispatchFavorites, stateFavorites } = this.props;
-    const { paging } = this.state;
+    const { history, dispatchPosts, dispatchFavorites, stateFavorites } = this.props;
+    const { statePosts } = this.state;
     const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
+    
     return (
-      <Container>
-        { posts && posts[paging].map((elem, index) => (
+      <Container className="post-container">
+        { statePosts && statePosts.map((elem, index) => (
           <Post key={index}>
             <div className="name-div">
               <h5>{elem.name}</h5>
@@ -57,9 +78,6 @@ class PostsContainer extends React.Component {
           </Post>
         )
         )}
-        <button onClick={ () => this.paging(paging) }>
-          Próxima Página
-        </button>
       </Container>
     );
   }
