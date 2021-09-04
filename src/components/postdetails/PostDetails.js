@@ -59,6 +59,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 PostDetails.propTypes = {
   statePost: PropTypes.arrayOf(PropTypes.object),
+  stateFavorites: PropTypes.arrayOf(PropTypes.object),
+  dispatchFavorites: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostDetails);

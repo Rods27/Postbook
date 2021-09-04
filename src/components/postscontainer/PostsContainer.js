@@ -11,11 +11,16 @@ class PostsContainer extends React.Component {
     this.state = {
       paging: 0,
     };
+    this.infiniteScroll = this.infiniteScroll.bind(this);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.infiniteScroll);
   }
 
   componentDidMount() {
     this.statePosts();
-    this.infiniteScroll();
+    document.addEventListener('scroll', this.infiniteScroll);
   }
 
   statePosts() {
@@ -24,28 +29,36 @@ class PostsContainer extends React.Component {
     this.setState({ statePosts });
   }
 
+  componentDidUpdate() {
+    const { paging } = this.state;
+    if (paging < 10) {
+      document.addEventListener('scroll', this.infiniteScroll);
+    }
+  }
+
   infiniteScroll() {
+    const containerHeight = document.querySelector('.post-container')
+    .getBoundingClientRect().bottom 
+    if (containerHeight <= window.innerHeight) {
+      this.increaseState();
+      document.removeEventListener('scroll', this.infiniteScroll);
+    }
+    this.setState({ render: true });
+  }
+
+  increaseState() {
     const { posts } = this.props;
-    document.addEventListener('scroll', () => {
-      const scrollingHeight = document.querySelector('.post-container')
-        .getBoundingClientRect().bottom;
-      const { paging, statePosts } = this.state;
-        if (scrollingHeight + 15 <= window.innerHeight) {
-          if (paging < 10) {
-            this.setState(prevState => ({
-              paging: prevState.paging + 1 
-            }));
-            statePosts.push(...posts[paging]);
-          }
-        }
-    })
+    const { paging, statePosts } = this.state;
+    this.setState(prevState => ({
+      paging: prevState.paging + 1 
+    }));
+    statePosts.push(...posts[paging]);
   }
 
   render() {
     const { history, dispatchPosts, dispatchFavorites, stateFavorites } = this.props;
     const { statePosts } = this.state;
     const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
-    
     return (
       <Container className="post-container">
         { statePosts && statePosts.map((elem, index) => (
