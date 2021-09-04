@@ -1,6 +1,6 @@
 export default async function addToFavorite(elem, dispatchFavorites, stateFavorites) {
   const localStorageStars = JSON.parse(localStorage.getItem('stars'));
-  if(!stateFavorites.includes(elem)) {
+  if(!localStorageStars.includes(elem.id)) {
     stateFavorites.push(elem);
     dispatchFavorites(stateFavorites);
     localStorageStars.push(elem.id);

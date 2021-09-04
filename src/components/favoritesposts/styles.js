@@ -16,7 +16,7 @@ export const Post = styled.div`
   flex-direction: column;
   border: 0.1px solid rgba(0, 0, 0, 0.1);
   width: 520px;
-  height: 180px;
+  height: 190px;
   border-radius: 12px;
   margin: 15px 0;
   padding: 5px 10px;
@@ -26,6 +26,7 @@ export const Post = styled.div`
     align-items: center;
     height: 35px;
     border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+    font-size: 18px;
   }
   .post-body {
     display: flex;
@@ -44,6 +45,7 @@ export const Post = styled.div`
       background: none;
       cursor: pointer;
       text-align: left;
+      font-size: 15.5px;
     }
     #favorite {
       position: absolute;

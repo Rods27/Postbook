@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Post } from './styles';
 import { detailsAction, favoritesAction } from '../../redux/actions';
 import addToFavorite from '../../utils/addToFavorite';
+import favoriteToRedux from '../../utils/favoriteToRedux';
 
 class PostsContainer extends React.Component {
   constructor() {
@@ -19,14 +20,10 @@ class PostsContainer extends React.Component {
   }
 
   componentDidMount() {
+    const { dispatchFavorites } = this.props;
     this.statePosts();
+    favoriteToRedux(dispatchFavorites);
     document.addEventListener('scroll', this.infiniteScroll);
-  }
-
-  statePosts() {
-    const { posts } = this.props;
-    const statePosts = posts[0];
-    this.setState({ statePosts });
   }
 
   componentDidUpdate() {
@@ -36,22 +33,28 @@ class PostsContainer extends React.Component {
     }
   }
 
+  statePosts() {
+    const { posts } = this.props;
+    const statePosts = posts[0];
+    this.setState({ statePosts });
+  }
+
   infiniteScroll() {
     const containerHeight = document.querySelector('.post-container')
     .getBoundingClientRect().bottom 
     if (containerHeight <= window.innerHeight) {
       this.increaseState();
       document.removeEventListener('scroll', this.infiniteScroll);
+      this.setState({ render: true });
     }
-    this.setState({ render: true });
   }
 
   increaseState() {
     const { posts } = this.props;
-    const { paging, statePosts } = this.state;
     this.setState(prevState => ({
       paging: prevState.paging + 1 
     }));
+    const { paging, statePosts } = this.state;
     statePosts.push(...posts[paging]);
   }
 

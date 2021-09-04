@@ -4,9 +4,15 @@ import PropTypes from 'prop-types';
 import { Container, Post } from './styles';
 import { favoritesAction } from '../../redux/actions';
 import addToFavorite from '../../utils/addToFavorite';
+import favoriteToRedux from '../../utils/favoriteToRedux'
 
 
 class PostDetails extends React.Component {
+  componentDidMount() {
+    const { dispatchFavorites } = this.props;
+    favoriteToRedux(dispatchFavorites);
+  }
+
   render() {
     const { statePost, dispatchFavorites, stateFavorites } = this.props;
     const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));

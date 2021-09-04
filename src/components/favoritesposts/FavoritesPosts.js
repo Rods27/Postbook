@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { favoritesAction } from '../../redux/actions';
 import { Container, Post } from './styles'
 import addToFavorite from '../../utils/addToFavorite';
+import favoriteToRedux from '../../utils/favoriteToRedux';
 
 class FavoritesPosts extends React.Component {
   constructor() {
@@ -13,12 +14,7 @@ class FavoritesPosts extends React.Component {
 
   componentDidMount() {
     const { dispatchFavorites } = this.props;
-    if(localStorage.favorites) {
-      const localStorageFavorites = JSON.parse(
-        localStorage.getItem('favorites')
-      );
-      dispatchFavorites(localStorageFavorites);
-    }
+    favoriteToRedux(dispatchFavorites);
   }
 
   render() {
