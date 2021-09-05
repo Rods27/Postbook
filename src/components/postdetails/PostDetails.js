@@ -4,22 +4,40 @@ import PropTypes from 'prop-types';
 import { Container, Post } from './styles';
 import { favoritesAction } from '../../redux/actions';
 import addToFavorite from '../../utils/addToFavorite';
-import favoriteToRedux from '../../utils/favoriteToRedux'
+import favoriteToRedux from '../../utils/favoriteToRedux';
+import postsIntegration from '../../utils/postsIntegration';
 
 
 class PostDetails extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      actualPost: [],
+    }
+  }
+
   componentDidMount() {
     const { dispatchFavorites } = this.props;
     favoriteToRedux(dispatchFavorites);
+    this.getActualPostIntoState();
+  }
+
+  getActualPostIntoState() {
+    const { history: { location: { pathname } } } = this.props;
+    const pagePostId = Number(pathname.split('/')[2]);
+    const posts = postsIntegration(true);
+    const actualPost = posts.filter((elem) => elem.id === pagePostId);
+    this.setState({ actualPost });
   }
 
   render() {
-    const { statePost, dispatchFavorites, stateFavorites } = this.props;
+    const { dispatchFavorites, stateFavorites } = this.props;
+    const { actualPost } = this.state;
     const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
     return (
       <Container>
-        { statePost.length > 0
-          && statePost.map((elem, i) => (
+        { (actualPost && actualPost.length > 0)
+          && actualPost.map((elem, i) => (
             <Post key={ i }>
               <div className="name-div">
                 <h5>{elem.name}</h5>
@@ -55,7 +73,6 @@ class PostDetails extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  statePost: state.postsReducer.post,
   stateFavorites: state.postsReducer.favoritePosts,
 });
 
@@ -64,7 +81,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 PostDetails.propTypes = {
-  statePost: PropTypes.arrayOf(PropTypes.object),
   stateFavorites: PropTypes.arrayOf(PropTypes.object),
   dispatchFavorites: PropTypes.func.isRequired,
 };

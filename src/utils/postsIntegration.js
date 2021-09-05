@@ -3,7 +3,7 @@ import posts from '../data/posts.json';
 import comments from '../data/comments.json';
 import postsPaging from './postsPaging';
 
-export default function postsIntegration() {
+export default function postsIntegration(details) {
   posts.forEach((elem1) => {
     let commentsArr = [];
     users.forEach((elem2) => {
@@ -14,6 +14,7 @@ export default function postsIntegration() {
     })
     elem1.comments = commentsArr;
   });
+  if (details) return posts
   return postsPaging();
 }
 

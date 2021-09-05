@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Container, Post } from './styles';
-import { detailsAction, favoritesAction } from '../../redux/actions';
+import { favoritesAction } from '../../redux/actions';
 import addToFavorite from '../../utils/addToFavorite';
 import favoriteToRedux from '../../utils/favoriteToRedux';
 
@@ -55,11 +55,11 @@ class PostsContainer extends React.Component {
       paging: prevState.paging + 1 
     }));
     const { paging, statePosts } = this.state;
-    statePosts.push(...posts[paging]);
+    if(paging < 10) statePosts.push(...posts[paging]);
   }
 
   render() {
-    const { history, dispatchPosts, dispatchFavorites, stateFavorites } = this.props;
+    const { history, dispatchFavorites, stateFavorites } = this.props;
     const { statePosts } = this.state;
     const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
     return (
@@ -70,10 +70,7 @@ class PostsContainer extends React.Component {
               <h5>{elem.name}</h5>
             </div>
             <div className="post-body">
-              <button onClick={ () => {
-                dispatchPosts([elem]);
-                history.push(`/posts/${elem.id}`);
-              }}>
+              <button onClick={ () => history.push(`/posts/${elem.id}`) }>
                 <h4>{elem.title}</h4>
                 <p>{elem.body}</p>
               </button>
@@ -105,12 +102,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchFavorites: (array) => dispatch(favoritesAction(array)),
-  dispatchPosts: (array) => dispatch(detailsAction(array)),
 });
 
 PostsContainer.propTypes = {
   history: PropTypes.shape().isRequired,
-  dispatchPosts: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);

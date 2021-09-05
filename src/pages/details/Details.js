@@ -11,7 +11,7 @@ class Details extends React.Component {
     return (
       <Container>
         <Header history={ history } />
-        <PostDetails />
+        <PostDetails history={ history } />
       </Container>
     );
   }

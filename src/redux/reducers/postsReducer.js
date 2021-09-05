@@ -1,4 +1,4 @@
-import { FAVORITES, DETAILS } from '../actions';
+import { FAVORITES } from '../actions';
 
 const INITIAL_STATE = {
   post: [],
@@ -7,11 +7,6 @@ const INITIAL_STATE = {
 
 export default function musics(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case DETAILS:
-    return {
-      ...state,
-      post: action.array,
-    };
   case FAVORITES:
   return {
     ...state,
