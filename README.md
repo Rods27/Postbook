@@ -1,5 +1,5 @@
 
-# Postbook
+# <img align="left" src="public/favicon.ico" width="40" /> Postbook 
 
 Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quando necessário, também podendo acessar os detalhes de cada post, possui um infiniteScrolling caso queira ver todos os posts.
 
@@ -15,13 +15,13 @@ Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quand
 
 ## Screenshots
 
-<img align="left" src="client/public/img/1.jpg" width="400" />
+<img align="left" src="public/img/1.jpg" width="400" />
 
-<img align="center" src="client/public/img/2.jpg" width="400" />
+<img align="center" src="public/img/2.jpg" width="400" />
 
-<img align="left" src="client/public/img/3.jpg" width="400" />
+<img align="left" src="public/img/3.jpg" width="400" />
 
-<img align="center" src="client/public/img/4.jpg" width="400" />
+<img align="center" src="public/img/4.jpg" width="400" />
 
 ## Deploy
 <a href=https://rods27.github.io/Postbook/ target="blank">Link para o teste da aplicação</a>
