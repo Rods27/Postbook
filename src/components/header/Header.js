@@ -11,7 +11,7 @@ class Header extends React.Component {
           <i className="fas fa-home"></i>
         </button>
         <h1>Postbook</h1>
-        <button id="favorites" onClick={ () => history.push('/favorites') }>
+        <button id="favorites" onClick={ () => history.push('/posts/favorites') }>
           <i className="fas fa-star"></i>
         </button>
       </HeaderContainer>

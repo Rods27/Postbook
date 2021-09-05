@@ -1,5 +1,5 @@
 export default function favoriteToRedux(dispatchFavorites) {
-  if(localStorage.favorites) {
+  if(localStorage.pbfavorites) {
     const localStorageFavorites = JSON.parse(
       localStorage.getItem('pbfavorites')
     );
