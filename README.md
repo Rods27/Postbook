@@ -25,7 +25,7 @@ Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quand
 
 ## Deploy
 <a href=https://rods27.github.io/Postbook/ target="blank">Link para o teste da aplicação</a>
-Ou cole https://rods27.github.io/Postbook/ no navegador.
+Ou cole ```https://rods27.github.io/Postbook/``` no navegador.
 
 ## Tecnologias
 <ul>
