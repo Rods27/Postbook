@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Postbook/static/css/main.570a0005.chunk.css",
-    "main.js": "/Postbook/static/js/main.a2003ebd.chunk.js",
-    "main.js.map": "/Postbook/static/js/main.a2003ebd.chunk.js.map",
+    "main.js": "/Postbook/static/js/main.b7e1a8e2.chunk.js",
+    "main.js.map": "/Postbook/static/js/main.b7e1a8e2.chunk.js.map",
     "runtime-main.js": "/Postbook/static/js/runtime-main.f4ca211c.js",
     "runtime-main.js.map": "/Postbook/static/js/runtime-main.f4ca211c.js.map",
     "static/js/2.73dcfffd.chunk.js": "/Postbook/static/js/2.73dcfffd.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f4ca211c.js",
     "static/js/2.73dcfffd.chunk.js",
     "static/css/main.570a0005.chunk.css",
-    "static/js/main.a2003ebd.chunk.js"
+    "static/js/main.b7e1a8e2.chunk.js"
   ]
 }
