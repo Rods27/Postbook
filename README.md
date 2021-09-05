@@ -9,9 +9,9 @@ Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quand
 * [Instalação](#instalação)
 * [Inicializando](#Inicializando)
 * [Funcionalidades](#funcionalidades)
-  * [Tela Principal](#telaprincipal---posts)
-  * [Tela de Favoritos](#teladefavoritos---posts---favorites)
-  * [Tela de Detalhes](#teladefavoritos---posts---id)
+  * [Tela Principal](#tela-principal-posts)
+  * [Tela de Detalhes](#tela-de-favoritos--id)
+  * [Tela de Favoritos](#tela-de-favoritos--postsfavorites)
 
 ## Screenshots
 
@@ -61,6 +61,12 @@ Para a aplicação funcionar, basta digitar em seu terminal ```npm start``` da p
       Botão de Estrela:
       <li>Será redirecionado aos favoritos.</li>
     </ul>
+  </ul><br>
+
+ #### Tela de Favoritos  ```/posts/id```
+  <ul>
+    <li>Nesta parte da tela, será mostrado o detalhe do post, incluindo os comentários.</li>
+    <li>O usuário pode favoritar e desfavoritar o post.</li>
   </ul><br>
   
  #### Tela de Favoritos  ```/posts/favorites```
