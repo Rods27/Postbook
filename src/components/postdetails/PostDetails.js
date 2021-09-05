@@ -81,6 +81,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 PostDetails.propTypes = {
+  history: PropTypes.shape().isRequired,
   stateFavorites: PropTypes.arrayOf(PropTypes.object),
   dispatchFavorites: PropTypes.func.isRequired,
 };

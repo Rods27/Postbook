@@ -105,7 +105,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 PostsContainer.propTypes = {
+  dispatchFavorites: PropTypes.func.isRequired,
   history: PropTypes.shape().isRequired,
+  stateFavorites: PropTypes.arrayOf(PropTypes.object),
+  posts: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
