@@ -14,7 +14,7 @@ class FavoritesPosts extends React.Component {
 
   render() {
     const { history, stateFavorites, dispatchFavorites } = this.props;
-    const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
+    const localStorageFavorites = JSON.parse(localStorage.getItem('pbstars'));
     return (
       <Container>
         { (stateFavorites && stateFavorites.length > 0)

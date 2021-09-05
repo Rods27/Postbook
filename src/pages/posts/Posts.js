@@ -7,8 +7,6 @@ import { Container } from './styles';
 class Posts extends React.Component {
   render() {
     const { history } = this.props;
-    if(!localStorage.favorites) localStorage.setItem('favorites', JSON.stringify([]));
-    if(!localStorage.stars) localStorage.setItem('stars', JSON.stringify([]));
     return (
       <Container>
         <Header history={ history } />

@@ -61,7 +61,7 @@ class PostsContainer extends React.Component {
   render() {
     const { history, dispatchFavorites, stateFavorites } = this.props;
     const { statePosts } = this.state;
-    const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
+    const localStorageFavorites = JSON.parse(localStorage.getItem('pbstars'));
     return (
       <Container className="post-container">
         { statePosts && statePosts.map((elem, index) => (

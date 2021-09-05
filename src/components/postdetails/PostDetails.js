@@ -33,7 +33,7 @@ class PostDetails extends React.Component {
   render() {
     const { dispatchFavorites, stateFavorites } = this.props;
     const { actualPost } = this.state;
-    const localStorageFavorites = JSON.parse(localStorage.getItem('stars'));
+    const localStorageFavorites = JSON.parse(localStorage.getItem('pbstars'));
     return (
       <Container>
         { (actualPost && actualPost.length > 0)
