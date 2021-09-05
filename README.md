@@ -10,7 +10,7 @@ Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quand
 * [Inicializando](#Inicializando)
 * [Funcionalidades](#funcionalidades)
   * [Tela Principal](#tela-principal-posts)
-  * [Tela de Detalhes](#tela-de-favoritos--id)
+  * [Tela de Detalhes](#tela-de-favoritos--postsid)
   * [Tela de Favoritos](#tela-de-favoritos--postsfavorites)
 
 ## Screenshots
