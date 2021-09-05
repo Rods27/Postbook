@@ -5,6 +5,10 @@ export const Container = styled.div`
   width: 65%;
   max-width: 1000px;
   margin: 60px 0 20px 0;
+  @media (max-width: 750px) {
+    width: 85%;
+    min-width: 230px;
+  }
 `;
 
 export const Post = styled.div`
@@ -59,4 +63,5 @@ export const Post = styled.div`
       border-radius: 8px;
     }
   }
+
 `;

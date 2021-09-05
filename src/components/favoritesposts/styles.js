@@ -67,4 +67,8 @@ export const Post = styled.div`
       }
     }
   }
+  @media (max-width: 450px) {
+    height: 30%;
+    min-width: 230px;
+  }
 `;

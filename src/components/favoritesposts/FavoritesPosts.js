@@ -7,11 +7,6 @@ import addToFavorite from '../../utils/addToFavorite';
 import favoriteToRedux from '../../utils/favoriteToRedux';
 
 class FavoritesPosts extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   componentDidMount() {
     const { dispatchFavorites } = this.props;
     favoriteToRedux(dispatchFavorites);
