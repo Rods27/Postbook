@@ -2,6 +2,7 @@ const collorPallete = {
   lightBlack: '#333',
   lighterBlack: '#434343',
   lightestBlack: '#5d5c5c',
+  white: '#F9F9F9',
   darkWhite: '#ece8e8',
   darkerWhite: '#e2e2e2',
   darkestWhite: '#c6c6c6',

@@ -16,11 +16,12 @@ export const Post = styled.div`
   margin: 15px 0;
   padding: 5px 10px;
   box-shadow: 0 .1px 1px 0px rgba(0, 0, 0, 0.1) , 0 .3px 2px 0px rgba(0, 0, 0, 0.1);
+  background-color: ${collorPallete.white};
   .name-div {
     display: flex;
     align-items: center;
     height: 35px;
-    border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.15);
     font-size: 18px;
   }
   .post-body {
