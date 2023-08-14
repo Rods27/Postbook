@@ -1,17 +1,17 @@
 
 # <img align="left" src="public/favicon.ico" width="40" /> Postbook 
 
-Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quando necessário, também podendo acessar os detalhes de cada post, possui um infiniteScrolling caso queira ver todos os posts.
+An application that displays posts, allowing users to favorite and unfavorite them as needed, also providing access to the details of each post. It includes infinite scrolling if you want to view all the posts.
 
 ## Indice
 * [Deploy](#deploy)
-* [Tecnologias](#tecnologias)
-* [Instalação](#instalação)
-* [Inicializando](#Inicializando)
-* [Funcionalidades](#funcionalidades)
-  * [Tela Principal](#tela-principal-posts)
-  * [Tela de Detalhes](#tela-de-favoritos--postsid)
-  * [Tela de Favoritos](#tela-de-favoritos--postsfavorites)
+* [Technologies](#technologies)
+* [Installation](#installation)
+* [Getting Started](#getting-started)
+* [Functionalities](#functionalities)
+  * [Main Screen](#main-screen-posts)
+  * [Details](#Details--postsid)
+  * [Favorites](#favorites--postsfavorites)
 
 ## Screenshots
 
@@ -24,10 +24,10 @@ Uma aplicação que mostra posts, podendo favoritá-los e desfavoritá-los quand
 <img align="center" src="public/img/4.jpg" width="400" />
 
 ## Deploy
-<a href=https://rods27.github.io/Postbook/ target="blank">Link para o teste da aplicação</a>
-Ou cole ```https://rods27.github.io/Postbook/``` no navegador.
+<a href=https://rods27.github.io/Postbook/ target="blank">Link to the application test</a>
+Alternatively, you can paste https://rods27.github.io/Postbook/ into your browser.
 
-## Tecnologias
+## Technologies
 <ul>
   <li>Javascript</li>
   <li><a href="https://reactjs.org">React</a></li>
@@ -35,50 +35,52 @@ Ou cole ```https://rods27.github.io/Postbook/``` no navegador.
   <li><a href="https://styled-components.com/">Styled Components</a></li>
 </ul>
 
-## Instalação
-Assim que tiver clonado o repositório, usando o terminal do [vscode](https://code.visualstudio.com/) ou o terminal do seu sistema operacional.
-- Installe as dependencias usando :
+## Installation
+Once you've cloned the repository, using either the vscode terminal or your operating system's terminal:
+
+-Install dependencies using:
+
 ```
 npm install
 ```
-Faça o comando tanto na pasta raiz.
+Run this command in the root folder.
 
-## Inicializando
-Para a aplicação funcionar, basta digitar em seu terminal ```npm start``` da pasta raiz.
+## Getting Started
+To make the application work, simply type ```npm start``` in your terminal from the root folder.
 
 
-## Funcionalidades
-[Voltar ao Indice](#indice)
-#### Tela Principal ```/posts``` 
-  <ul>
-    <li>O usuário pode ler os posts e favoritá-los clicando no botão em formato de estrela, e desfavoritar.</li>
-    <li>Caso o usuário clique no post, será direcionado a tela de detalhe de posts.</li>
-    <li>Caso o usuario atinja o final da pagina pelo scroll, será carregado mais posts.</li>
-    Header:
-    <ul>
-      Botão de Casa:
-      <li>Será redirecionado a Tela Principal.</li>
-      Botão de Estrela:
-      <li>Será redirecionado aos favoritos.</li>
-    </ul>
-  </ul><br>
+## Functionalities
+[Back](#indice)
+#### Main Screen ```/posts``` 
+ <ul>
+   <li>Users can read posts and favorite them by clicking the star-shaped button, and unfavorite them as well.</li>
+   <li>If the user clicks on a post, they will be directed to the post detail screen.</li>
+   <li>If the user reaches the end of the page by scrolling, more posts will be loaded.</li>
+   Header:
+   <ul>
+     Home Button:
+     <li>Will redirect to the Main Screen.</li>
+     Star Button:
+     <li>Will redirect to the favorites.</li>
+   </ul>
+ </ul><br>
 
- #### Tela de Favoritos  ```/posts/id```
-  <ul>
-    <li>Nesta parte da tela, será mostrado o detalhe do post, incluindo os comentários.</li>
-    <li>O usuário pode favoritar e desfavoritar o post.</li>
-  </ul><br>
+ #### Details  ```/posts/id```
+ <ul>
+   <li>In this part of the screen, the post detail will be displayed, including comments.</li>
+   <li>Users can favorite and unfavorite the post.</li>
+ </ul><br>
   
- #### Tela de Favoritos  ```/posts/favorites```
-  <ul>
-    <li>Nesta parte da tela, serão mostrados os posts favoritos do usuário.</li>
-    <li>O usuário pode acessar o detalhe do post caso clique-o.</li>
-    <li>O usuário pode desfavoritar o post.</li>
-  </ul><br>
+ #### Favorites  ```/posts/favorites```
+ <ul>
+   <li>In this part of the screen, the user's favorite posts will be displayed.</li>
+   <li>Users can access the post detail by clicking on it.</li>
+   <li>Users can unfavorite the post.</li>
+ </ul><br>
   
- [Voltar ao Indice](#indice)
+ [Back](#indice)
 ## Feedback 
 
-Ficarei bem agradecido caso queira me dar um feedback costrutivo, caso queira meus contatos estarão abaixo!
+I would greatly appreciate it if you could provide me with constructive feedback. If you'd like to get in touch, my contact information is provided below!
 
-Email: rods.leite27@gmail.com e <a href="https://linkedin.com/in/rodrigoleite27">Linkedin</a>.
+Email: rods.leite27@gmail.com or <a href="https://linkedin.com/in/rodrigoleite27">Linkedin</a>.
