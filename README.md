@@ -4,7 +4,6 @@
 An application that displays posts, allowing users to favorite and unfavorite them as needed, also providing access to the details of each post. It includes infinite scrolling if you want to view all the posts.
 
 ## Indice
-* [Deploy](#deploy)
 * [Technologies](#technologies)
 * [Installation](#installation)
 * [Getting Started](#getting-started)
@@ -22,10 +21,6 @@ An application that displays posts, allowing users to favorite and unfavorite th
 <img align="left" src="public/img/3.jpg" width="400" />
 
 <img align="center" src="public/img/4.jpg" width="400" />
-
-## Deploy
-<a href=https://rods27.github.io/Postbook/ target="blank">Link to the application test</a>
-Alternatively, you can paste https://rods27.github.io/Postbook/ into your browser.
 
 ## Technologies
 <ul>
